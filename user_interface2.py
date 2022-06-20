@@ -79,6 +79,8 @@ def build_model(DF):
     ####################################################################################################################
     # model performance
     st.subheader('Section 3: Model Performance')
+    st.markdown("In this section, the dataset with **TOP 5** features selected will be inserted into 3 models below. The perfomance of each model after generating prediction results will be measured by **Accuray**, **Precision and Recall of Confusion Matrix**, and **ROC Curve**. ")
+    st.write("\n")
     # #Adaboost
     # setting decision tree as decision stump
     decisiontree_clf = DecisionTreeClassifier(max_depth=1, criterion='gini', random_state=1)
@@ -136,8 +138,7 @@ def build_model(DF):
     ##########################################################################################################
 
     # display accuracy result (Adaboost)
-    annotated_text("", ("⌨Model 1: AdaBoost with Decision Tree As Base Algorithm", "", "#88cbff"))
-    st.write("\n")
+    st.markdown("<h6 style='text-align:left; color:#3A4B74;'><mark>⌨Model 1: AdaBoost with Decision Tree as Base Algorithm</mark></h6>", unsafe_allow_html= True)
     st.write(" **A. The Accuracy Result of Train Set** ", (adaboostclf_train_sc.round(4)*100),"%")
     st.write(" **B. The Accuracy Result of Test Set** ", (adaboostclf_test_sc.round(4)*100),"%")
     if adaboostclf_test_sc > SVM_test_sc and adaboostclf_test_sc > ec_test_sc:
@@ -201,8 +202,9 @@ def build_model(DF):
                 unsafe_allow_html=True)
 
     # display accuracy (SVM)
-    annotated_text("", (" ⌨Model 2: Support Vector Machine (SVM)", "", "#88cbff"))
-    st.write("\n")
+    st.markdown(
+        "<h6 style='text-align:left; color:#3A4B74;'><mark>⌨Model 2: Support Vector Machine (SVM)</mark></h6>",
+        unsafe_allow_html=True)
     st.write(" **A. The Accuracy Result of Train Set**     ", (SVM_train_sc.round(4)*100),"%")
     st.write(" **B. The Accuracy Result of Test Set**     ", (SVM_test_sc.round(4)*100),"%")
     if SVM_test_sc > adaboostclf_test_sc and SVM_test_sc > ec_test_sc:
@@ -262,10 +264,11 @@ def build_model(DF):
                 unsafe_allow_html=True)
 
     # display accuracy (EM)
-    annotated_text("", ("⌨Model 3: Ensemble Method", "", "#88cbff"))
-    st.write("\n")
-    st.write(" **A. The Accuracy Result of Train Set** ", (ec_train_sc.round(4) * 100), "%")
-    st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc.round(4) * 100), "%")
+    st.markdown(
+        "<h6 style='text-align:left; color:#3A4B74;'><mark>⌨Model 3: Ensemble Method</mark></h6>",
+        unsafe_allow_html=True)
+    st.write(" **A. The Accuracy Result of Train Set** ", (ec_train_sc * 100).round(2), "%")
+    st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc * 100).round(2), "%")
     if ec_test_sc > adaboostclf_test_sc and ec_test_sc > SVM_test_sc:
         st.success("**Conclusion**: Model 3 is the _**strongest**_ model!")
     elif ec_test_sc < adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
@@ -309,12 +312,37 @@ def build_model(DF):
                 st.write("**Recall:**", (recall_score(y_test2, target_pred3).round(4) * 100), "%")
     st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
+
+    ###########################################previous findings########################################################
+    st.header("👀 Sneak peak on findings of previous research")
+    st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This research was based on 5 existing research works from expertise of machine learning."
+             " I would like to grab this opportunity to share 1 of the work here. You may download this research paper as your reference too. Hope you enjoy it! &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
+                " &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-Yee Hang</i></p>", unsafe_allow_html= True)
+    st.write("\n")
+
+    st.markdown("**Details of the research paper:**")
+    st.markdown("📝 Research Title: Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm")
+    st.markdown("📝 Year of published: 2018")
+    st.markdown("📝 Author: Minyechil Alehegn, Rahul Joshi, and Dr. Preeti Mulay")
+    st.markdown("📝 Citation: Alehegn, M., Joshi, R. & Mulay, P. 2018. Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm. International Journal of Pure and Applied Mathematics, 118(9), 871-878.")
+    st.write('\n')
+
+    st.markdown("**Findings on this paper:**")
+    image = Image.open('paper_result.png')
+    st.image(image, caption='The results of accuracy on each model tested in this paper.')
+
+    with open("Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm.pdf", "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+    st.download_button(label="👉Download Research Paper👈",
+                       data=PDFbyte,
+                       file_name="Research Paper.pdf",
+                       mime='application/octet-stream')
 ########################################################################################################################
 # starting interface on title page
 st.write("""# Diabetes Prediction Test""")
 st.markdown("In this tool, you could compare the accuracy of 3 models in predicting diabetes results.")
 st.markdown(" **👩‍💻Instructions to use this tool:** ")
-st.markdown("1️⃣ Drag a diabetes dataset into the tool through side bar.")
+st.markdown("1️⃣ Download the CSV diabetes dataset provided in the side bar and the dataset into the tool.")
 annotated_text("2️⃣ Hit the", ("Generate Diabetes Prediction Result", "button", "#fea"), "to begin.")
 st.write("\n")
 st.markdown("3️⃣ You are now able to view the accuracy result of 3 models.")
@@ -329,15 +357,23 @@ if uploaded_file is not None:
 else:
     st.error('Awaiting for CSV file to be uploaded.')
 
+#download dataset CSV
+with open("diabetes_data_upload.csv", "rb") as csv_file:
+        CSVbyte = csv_file.read()
+st.sidebar.download_button(
+                    label="👉Download Diabetes Dataset👈",
+                    data=CSVbyte,
+                    file_name="diabetes_data_upload.csv",
+                    mime='application/octet-stream'
+)
 # upload file through sidebar
 if uploaded_file is not None:
     DF = pd.read_csv(uploaded_file)
     st.subheader('Section 1: Dataset')
-    st.markdown('**Glimpse of dataset**')
+    st.markdown('**Glimpse of dataset.** This dataset contains 520 of samples and 17 attributes including 1 target varaible.')
     st.write(DF)
     if st.button("Generate Diabetes Prediction Result"):
         st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                     unsafe_allow_html=True)
         build_model(DF)
 ########################################################################################################################
-
