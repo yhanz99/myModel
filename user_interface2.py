@@ -14,7 +14,6 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import VotingClassifier
-from annotated_text import annotated_text
 # https://ruslanmv.com/blog/Web-Application-Classification
 # https://www.stackvidhya.com/plot-confusion-matrix-in-python-and-why/
 from PIL import Image
