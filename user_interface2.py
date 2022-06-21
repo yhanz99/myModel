@@ -78,7 +78,7 @@ def build_model(DF):
     ####################################################################################################################
     # model performance
     st.subheader('Section 3: Model Performance')
-    st.markdown("In this section, the dataset with **TOP 5** features selected will be inserted into 3 models below. The perfomance of each model after generating prediction results will be measured by **Accuray**, **Precision and Recall of Confusion Matrix**, and **ROC Curve**. ")
+    st.markdown("In this section, the dataset with **TOP 5** features selected will be inserted into 3 models below.")
     st.write("\n")
     # #Adaboost
     # setting decision tree as decision stump
@@ -119,7 +119,7 @@ def build_model(DF):
     accuracys.append(adaboostclf_test_sc)
 
     # 2. SVM
-    SVM = SVC(kernel="rbf", random_state=0)
+    SVM = SVC(kernel="rbf", random_state=0, probability=True)
     estimators.append(("svm_RBFkernel", SVM))
     SVM.fit(X_train3, y_train3)
     target_pred2 = SVM.predict(X_test3)
@@ -128,7 +128,7 @@ def build_model(DF):
     accuracys.append(SVM_test_sc)
 
     # 1+2. ensemble method
-    ensemble_model = VotingClassifier(estimators)
+    ensemble_model = VotingClassifier(estimators=[('ada', adaboostclf), ('svm', SVM)], voting='soft')
     ec = ensemble_model.fit(X_train2, y_train2)
     target_pred3 = ec.predict(X_test2)
     ec_train_sc = accuracy_score(y_train2, ec.predict(X_train2))
@@ -305,10 +305,24 @@ def build_model(DF):
                     '4. True Negative (TN): Correctly rejected.\n '
                     'In Model 3:  TP -> 74, FP -> 10, FN -> 9, TN -> 120. '
                 )
-
                 st.write("**Accuracy:**", (accuracy_score(y_test2, target_pred3).round(2) * 100), "%")
                 st.write("**Precision:**", (precision_score(y_test2, target_pred3).round(4) * 100), "%")
                 st.write("**Recall:**", (recall_score(y_test2, target_pred3).round(4) * 100), "%")
+    expand_EM2 = st.expander(label='Model Evaluation: ROC Curve')
+    with expand_EM2:
+        model3Report2_col1, model3Report2_col2 = st.columns(2)
+    with model3Report2_col1:
+        metrics.plot_roc_curve(ec, X_test2, y_test2)
+        st.pyplot()
+    # explain ROC
+    with model3Report2_col2:
+        st.write(
+            'ROC Curve: shows the rating of model performance.\n'
+            '1. The area covered by the curve is the area between the blue line (ROC) and the axis. \n'
+            '2. This area covered is AUC.\n'
+            '3. Ideal value for AUC is 1.\n'
+            'Through this curve, it shows that Model 1 has a high performance.')
+
     st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
 
@@ -361,7 +375,6 @@ if uploaded_file is not None:
 else:
     st.error('Awaiting for CSV file to be uploaded.')
 
-#download dataset CSV
 with open("diabetes_data_upload.csv", "rb") as csv_file:
         CSVbyte = csv_file.read()
 st.sidebar.download_button(
