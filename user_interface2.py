@@ -178,7 +178,6 @@ def build_model(DF):
                 '3. False Negative (FN): Incorrectly rejected (Type II error).\n'
                 '4. True Negative (TN): Correctly rejected.\n'
                 'In Model 1:  TP -> 42, FP -> 98, FN -> 6, TN -> 10. ')
-
                 st.write("**Accuracy:**", (accuracy_score(y_test1, target_pred1).round(4)*100), "%")
                 st.write("**Precision:**", (precision_score(y_test1, target_pred1).round(4) * 100), "%")
                 st.write("**Recall:**", (recall_score(y_test1, target_pred1).round(4) * 100), "%")
@@ -244,6 +243,9 @@ def build_model(DF):
                     '4. True Negative (TN): Correctly rejected. \n'
                     'In Model 2:  TP -> 45, FP -> 6, FN -> 6, TN -> 73. '
                 )
+                st.write("**Accuracy:**", (accuracy_score(y_test3, target_pred2).round(4)*100), "%")
+                st.write("**Precision:**", (precision_score(y_test3, target_pred2).round(4) * 100), "%")
+                st.write("**Recall:**", (recall_score(y_test3, target_pred2).round(4) * 100), "%")
     expand_SVM2 = st.expander(label='Model Evaluation: ROC Curve')
     with expand_SVM2:
         model2Report2_col1, model2Report2_col2 = st.columns(2)
