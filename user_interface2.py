@@ -359,10 +359,19 @@ st.markdown(
         "<p style='text-align:left; color:black;'>1️⃣ Download the CSV diabetes dataset provided in the side bar and the dataset into the tool.</p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>2️⃣ Hit the <mark>Generate Diabetes Prediction Result</mark> to begin.</p>",
+        "<p style='text-align:left; color:black;'>2️⃣ Click the <mark>Generate Diabetes Prediction Result</mark> to begin.</p>",
         unsafe_allow_html=True)
 st.markdown(
         "<p style='text-align:left; color:black;'>3️⃣ You are now able to view the accuracy result of 3 models.</p>",
+        unsafe_allow_html=True)
+st.markdown(
+        "<p style='text-align:left; color:black;'>Model 1: AdaBoost with Decision Tree as Base Algorithm.</p>",
+        unsafe_allow_html=True)
+st.markdown(
+        "<p style='text-align:left; color:black;'>Model 2: Support Vector Machine (SVM).</p>",
+        unsafe_allow_html=True)
+st.markdown(
+        "<p style='text-align:left; color:black;'>Model 3: Ensemble Method Model.</p>",
         unsafe_allow_html=True)
 
 # upload file through sidebar
