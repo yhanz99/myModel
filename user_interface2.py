@@ -390,8 +390,7 @@ st.sidebar.download_button(
     file_name="diabetes_data_upload.csv",
     mime='application/octet-stream')
 
-    st.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """,
-                unsafe_allow_html=True)
+st.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
 st.sidebar.subheader("✌️ Step 2")
 st.sidebar.write("")
