@@ -393,7 +393,6 @@ st.sidebar.download_button(
 st.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
 st.sidebar.subheader("✌️ Step 2")
-st.sidebar.write("")
 uploaded_file = st.sidebar.file_uploader("After downloading the dataset, drag the downloaded dataset into the white submission box below here.", type=["csv"])
 if uploaded_file is not None:
     with st.spinner('The dataset is being uploaded...'):
