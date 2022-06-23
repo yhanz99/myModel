@@ -331,15 +331,14 @@ def build_model(DF):
     st.header("👀 Sneak peak on findings of previous research")
     st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This project was conducted on five (5) previous research works from machine learning expertise."
              " I would like to grab this opportunity to share one (1) of the works here. You may download this research paper as your reference too. Hope you enjoy it! &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
-                " &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-Yee Hang</i></p>", unsafe_allow_html= True)
+                " &emsp;&emsp;&emsp;&emsp;&emsp;-Yee Hang</i></p>", unsafe_allow_html= True)
     st.write("\n")
 
     st.markdown("**Details of the research paper:**")
     st.markdown("📝 Research Title: Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm")
     st.markdown("📝 Published Year: 2018")
     st.markdown("📝 Authors: Minyechil Alehegn, Rahul Joshi, and Dr. Preeti Mulay")
-    st.markdown("📝 Citation: Alehegn, M., Joshi, R. & Mulay, P. 2018. Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm. International Journal of Pure and Applied Mathematics, 118(9), 871-878.")
-    st.write('\n[link](https://www.researchgate.net/publication/323278139_Analysis_and_prediction_of_diabetes_mellitus_using_machine_learning_algorithm)')
+    st.markdown("📝 Citation: Alehegn, M., Joshi, R. & Mulay, P. 2018. Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm. International Journal of Pure and Applied Mathematics, 118(9), 871-878.[link](https://www.researchgate.net/publication/323278139_Analysis_and_prediction_of_diabetes_mellitus_using_machine_learning_algorithm)")
 
     st.markdown("**Findings on this paper:**")
     image = Image.open('paper_result.png')
@@ -382,7 +381,7 @@ st.markdown(
 st.sidebar.title('Upload your diabetes .csv data here')
 
 st.sidebar.subheader("☝️ Step 1")
-st.sidebar.markdown("<p>You shuould begin with downloading the .csv diabetes dateset given here by clicking this download button.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p>You should begin with downloading the .csv diabetes dateset given here by clicking this download button.</p>", unsafe_allow_html=True)
 with open("diabetes_data_upload.csv", "rb") as csv_file:
     CSVbyte = csv_file.read()
 st.sidebar.download_button(
