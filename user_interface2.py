@@ -140,15 +140,15 @@ def build_model(DF):
     st.write(" **A. The Accuracy Result of Train Set** ", (adaboostclf_train_sc.round(4)*100),"%")
     st.write(" **B. The Accuracy Result of Test Set** ", (adaboostclf_test_sc.round(4)*100),"%")
     if adaboostclf_test_sc > SVM_test_sc and adaboostclf_test_sc > ec_test_sc:
-        st.success("**Conclusion**: Model 1 is the _**strongest**_ model!")
+        st.success("**Conclusion: Model 1 is the _strongest_ model !**")
     elif adaboostclf_test_sc < SVM_test_sc and adaboostclf_test_sc < ec_test_sc:
-        st.error("**Conclusion**: Model 1 is the _**weakest**_ model!")
+        st.error("**Conclusion: Model 1 is the _weakest_ model !**")
     elif adaboostclf_test_sc > SVM_test_sc and adaboostclf_test_sc < ec_test_sc:
-        st.warning("**Conclusion**: Model 1 is the _**stronger**_ than Model 2, but _**weaker**_ than Model 3!")
+        st.warning("**Conclusion: Model 1 is _stronger_ than Model 2, but _weaker_ than Model 3 !**")
     elif adaboostclf_test_sc < SVM_test_sc and adaboostclf_test_sc > ec_test_sc:
-        st.warning("**Conclusion**: Model 1 is the _**stronger**_ than Model 3, but _**weaker**_ than Model 2!")
+        st.warning("**Conclusion: Model 1 is _**stronger**_ than Model 3, but _**weaker**_ than Model 2!** ")
     else:
-        st.error("**Conclusion** :Model 1 is the _**weakest**_ model!")
+        st.error("**Conclusion :Model 1 is the _weakest_ model !**")
     expand_Ada1 = st.expander(label='Model Evaluation: Confusion Matrix')
     with expand_Ada1:
         model1Report1_col1, model1Report1_col2 = st.columns(2)
@@ -167,7 +167,7 @@ def build_model(DF):
             fig1CF.savefig("fig1CF.png")
             image1CF = Image.open("fig1CF.png")
             st.image(image1CF)
-            st.info(model1_cfMatrix)
+            #st.info(model1_cfMatrix)
             # explain confusion matrix
             with model1Report1_col2:
                 st.write(
@@ -205,15 +205,15 @@ def build_model(DF):
     st.write(" **A. The Accuracy Result of Train Set**     ", (SVM_train_sc.round(4)*100),"%")
     st.write(" **B. The Accuracy Result of Test Set**     ", (SVM_test_sc.round(4)*100),"%")
     if SVM_test_sc > adaboostclf_test_sc and SVM_test_sc > ec_test_sc:
-        st.success("**Conclusion**: Model 2 is the _**strongest**_ model!")
+        st.success("**Conclusion: Model 2 is the _strongest_ model !**")
     elif SVM_test_sc < adaboostclf_test_sc and SVM_test_sc < ec_test_sc:
-        st.error("**Conclusion**: Model 2 is the _**weakest**_ model!")
+        st.error("**Conclusion: Model 2 is the _weakest_ model !**")
     elif SVM_test_sc > adaboostclf_test_sc and SVM_test_sc < ec_test_sc:
-        st.warning("**Conclusion**: Model 2 is the _**stronger**_ than Model 1, but _**weaker**_ than Model 3!")
+        st.warning("**Conclusion: Model 2 is _stronger_ than Model 1, but _weaker_ than Model 3 !**")
     elif SVM_test_sc < adaboostclf_test_sc and SVM_test_sc > ec_test_sc:
-        st.warning("**Conclusion**: Model 2 is the _**stronger**_ than Model 3, but _**weaker**_ than Model 1!")
+        st.warning("**Conclusion: Model 2 is _stronger_ than Model 3, but _weaker_ than Model 1 !**")
     else:
-        st.error("**Conclusion** :Model 2 is the _**weakest**_ model!")
+        st.error("**Conclusion: Model 2 is the _weakest_ model !**")
     expand_SVM1 = st.expander(label='Model Evaluation: Confusion Matrix')
     with expand_SVM1:
         model2Report1_col1, model2Report1_col2 = st.columns(2)
@@ -232,7 +232,7 @@ def build_model(DF):
             fig2CF.savefig("fig2CF.png")
             image2CF = Image.open("fig2CF.png")
             st.image(image2CF)
-            st.info(model2_cfMatrix)
+            #st.info(model2_cfMatrix)
             with model2Report1_col2:
                 st.write(
                     'Confusion Matrix to show the prediction of results in the form of matrix.\n'
@@ -258,7 +258,7 @@ def build_model(DF):
                 '1. The area covered by the curve is the area between the blue line (ROC) and the axis. \n'
                 '2. This area covered is AUC.\n'
                 '3. Ideal value for AUC is 1.\n'
-                'Through this curve, it shows that Model 1 has a high performance.'
+                'Through this curve, it shows that Model 2 has a high performance.'
             )
     st.markdown("""<hr style="height:2px; border:none; color:#8CB1F5; background-color:#8CB1F5;" /> """,
                 unsafe_allow_html=True)
@@ -270,15 +270,15 @@ def build_model(DF):
     st.write(" **A. The Accuracy Result of Train Set** ", (ec_train_sc * 100).round(2), "%")
     st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc * 100).round(2), "%")
     if ec_test_sc > adaboostclf_test_sc and ec_test_sc > SVM_test_sc:
-        st.success("**Conclusion**: Model 3 is the _**strongest**_ model!")
+        st.success("**Conclusion: Model 3 is the _**strongest**_ model !**")
     elif ec_test_sc < adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
-        st.error("**Conclusion** :Model 3 is the _**weakest**_ model!")
+        st.error("**Conclusion: Model 3 is the _weakest_ model !**")
     elif ec_test_sc > adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
-        st.warning("**Conclusion**: Model 3 is the _**stronger**_ than Model 1, but weaker than Model 2!")
+        st.warning("**Conclusion: Model 3 is _stronger_ than Model 1, but weaker than Model 2 !**")
     elif ec_test_sc < adaboostclf_test_sc and ec_test_sc > SVM_test_sc:
-        st.warning("**Conclusion**: Model 3 is the _**stronger**_ than Model 2, but weaker than Model 1!")
+        st.warning("**Conclusion: Model 3 is _stronger_ than Model 2, but weaker than Model 1 !**")
     else:
-        st.error("**Conclusion** :Model 3 is the _**weakest**_ model!")
+        st.error("**Conclusion: Model 3 is the _weakest_ model !**")
     expand_EM1 = st.expander(label='Model Evaluation: Confusion Matrix')
     with expand_EM1:
         model3Report1_col1, model3Report1_col2 = st.columns(2)
@@ -296,7 +296,7 @@ def build_model(DF):
             fig3CF.savefig("fig3CF.png")
             image3CF = Image.open("fig3CF.png")
             st.image(image3CF)
-            st.info(model3_cfMatrix)
+            #st.info(model3_cfMatrix)
             with model3Report1_col2:
                 st.write(
                     'Confusion Matrix to show the prediction of results in the form of matrix.\n'
@@ -322,24 +322,24 @@ def build_model(DF):
             '1. The area covered by the curve is the area between the blue line (ROC) and the axis. \n'
             '2. This area covered is AUC.\n'
             '3. Ideal value for AUC is 1.\n'
-            'Through this curve, it shows that Model 1 has a high performance.')
+            'Through this curve, it shows that Model 3 has a high performance.')
 
     st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
 
     ###########################################previous findings########################################################
     st.header("👀 Sneak peak on findings of previous research")
-    st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This research was based on 5 existing research works from expertise of machine learning."
-             " I would like to grab this opportunity to share 1 of the work here. You may download this research paper as your reference too. Hope you enjoy it! &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
+    st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This project was conducted on five (5) previous research works from machine learning expertise."
+             " I would like to grab this opportunity to share one (1) of the works here. You may download this research paper as your reference too. Hope you enjoy it! &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
                 " &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-Yee Hang</i></p>", unsafe_allow_html= True)
     st.write("\n")
 
     st.markdown("**Details of the research paper:**")
     st.markdown("📝 Research Title: Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm")
-    st.markdown("📝 Year of published: 2018")
-    st.markdown("📝 Author: Minyechil Alehegn, Rahul Joshi, and Dr. Preeti Mulay")
+    st.markdown("📝 Published Year: 2018")
+    st.markdown("📝 Authors: Minyechil Alehegn, Rahul Joshi, and Dr. Preeti Mulay")
     st.markdown("📝 Citation: Alehegn, M., Joshi, R. & Mulay, P. 2018. Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm. International Journal of Pure and Applied Mathematics, 118(9), 871-878.")
-    st.write('\n')
+    st.write('\n[link](https://www.researchgate.net/publication/323278139_Analysis_and_prediction_of_diabetes_mellitus_using_machine_learning_algorithm)')
 
     st.markdown("**Findings on this paper:**")
     image = Image.open('paper_result.png')
@@ -354,10 +354,10 @@ def build_model(DF):
 ########################################################################################################################
 # starting interface on title page
 st.write("""# Diabetes Prediction Test""")
-st.markdown("In this tool, you could compare the accuracy of 3 models in predicting diabetes results.")
+st.markdown("In this tool, you could compare the accuracy of resutls on diabetes prediction which generated by three (3) models.")
 st.markdown(" **👩‍💻Instructions to use this tool:** ")
 st.markdown(
-        "<p style='text-align:left; color:black;'>1️⃣ Download the CSV diabetes dataset provided in the side bar and the dataset into the tool.</p>",
+        "<p style='text-align:left; color:black;'>1️⃣ Download the .csv diabetes dataset provided in the side bar and insert the downloaded dataset into the box in side bar.</p>",
         unsafe_allow_html=True)
 st.markdown(
         "<p style='text-align:left; color:black;'>2️⃣ Click <mark>Generate Diabetes Prediction Result</mark> button to begin.</p>",
@@ -374,32 +374,40 @@ st.markdown(
 st.markdown(
         "<p style='text-align:left; color:black;'>&emsp;📎Model 3: Ensemble Method Model.</p>",
         unsafe_allow_html=True)
+st.markdown(
+        "<p style='text-align:left; color:black;'>4️⃣ You are now all set. Click the <h6>Greater than sign</h6> on the upper left side of the screen, and you may begin the prediction journey.</p>",
+        unsafe_allow_html=True)
 
 # upload file through sidebar
 st.sidebar.title('Upload your diabetes .csv data here')
 
+st.sidebar.subheader("Step 1")
+st.sidebar.write("You shuould begin with downloading the .csv diabetes dateset given here by clicking this download button.")
 with open("diabetes_data_upload.csv", "rb") as csv_file: CSVbyte = csv_file.read()
 st.sidebar.download_button(
     label="👉Download Diabetes Dataset👈",
     data=CSVbyte,
     file_name="diabetes_data_upload.csv",
     mime='application/octet-stream')
-    
-uploaded_file = st.sidebar.file_uploader("Upload your diabetes .csv dataset here", type=["csv"])
+
+st.sidebar.subheader("Step 2")
+st.sidebar.write("After downloading the dataset, drag the downloaded dataset into the white submission box below here.")
+#uploaded_file = st.sidebar.file_uploader("Upload your diabetes .csv dataset here", type=["csv"])
+uploaded_file = st.sidebar.file_uploader(type=["csv"])
 if uploaded_file is not None:
-    with st.spinner('The file is begin uploaded...'):
+    with st.spinner('The dataset is being uploaded...'):
         time.sleep(3)
-    st.success('The file is successfully uploaded.')
+    st.success('The dataset is successfully uploaded.')
 else:
-    st.error('Awaiting for the file to be uploaded.')
+    st.error('Awaiting for the dataset to be uploaded.')
 
 # upload file through sidebar
 if uploaded_file is not None:
     DF = pd.read_csv(uploaded_file)
     st.subheader('Section 1: Dataset')
-    st.markdown('**Glimpse of dataset.** This dataset contains 520 of samples and 17 attributes including 1 target varaible.')
+    st.markdown('**Glimpse of dataset.** This dataset contains 520 of samples and seventeen (17) attributes including one (1) target varaible.')
     st.write(DF)
-    if st.button("Generate Diabetes Prediction Result"):
+    if st.button("Generate Diabetes Prediction Results"):
         st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                     unsafe_allow_html=True)
         build_model(DF)
