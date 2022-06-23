@@ -377,18 +377,15 @@ st.markdown(
         unsafe_allow_html=True)
 
 # upload file through sidebar
-st.sidebar.title('Upload your diabetes CSV data here')
+st.sidebar.title('Upload your diabetes .csv data here')
 
-with open("diabetes_data_upload.csv", "rb") as csv_file:
-        CSVbyte = csv_file.read()
+with open("diabetes_data_upload.csv", "rb") as csv_file: CSVbyte = csv_file.read()
     st.sidebar.download_button(
         label="👉Download Diabetes Dataset👈",
         data=CSVbyte,
         file_name="diabetes_data_upload.csv",
-        mime='application/octet-stream'
-    )
+        mime='application/octet-stream')
     
-
 uploaded_file = st.sidebar.file_uploader("Upload your diabetes .csv dataset here", type=["csv"])
 if uploaded_file is not None:
     with st.spinner('The file is begin uploaded...'):
