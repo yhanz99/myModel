@@ -23,7 +23,6 @@ img = Image.open('logo.png')
 st.set_page_config(
     page_title="Diabetes Prediction Test",
     layout="wide",
-    initial_sidebar_state="expanded",
     page_icon=img
 )
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -361,10 +360,10 @@ st.markdown(
         "<p style='text-align:left; color:black;'>1️⃣ Download the CSV diabetes dataset provided in the side bar and the dataset into the tool.</p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>2️⃣ Click the <mark>Generate Diabetes Prediction Result</mark> to begin.</p>",
+        "<p style='text-align:left; color:black;'>2️⃣ Click <mark>Generate Diabetes Prediction Result</mark> button to begin.</p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>3️⃣ You are now able to view the accuracy result of 3 models below:</p>",
+        "<p style='text-align:left; color:black;'>3️⃣ You are now able to view the accuracy results of the models below:</p>",
         unsafe_allow_html=True)
 st.markdown(
         "<p style='text-align:left; color:black;'>&emsp;📎Model 1: AdaBoost with Decision Tree as Base Algorithm.</p>",
