@@ -382,7 +382,7 @@ st.markdown(
 st.sidebar.title('Upload your diabetes .csv data here')
 
 st.sidebar.subheader("☝️ Step 1")
-st.sidebar.write("You shuould begin with downloading the .csv diabetes dateset given here by clicking this download button.")
+st.sidebar.mark("You shuould begin with downloading the .csv diabetes dateset given here by clicking this download button.")
 with open("diabetes_data_upload.csv", "rb") as csv_file: CSVbyte = csv_file.read()
 st.sidebar.download_button(
     label="👉Download Diabetes Dataset👈",
@@ -390,6 +390,9 @@ st.sidebar.download_button(
     file_name="diabetes_data_upload.csv",
     mime='application/octet-stream')
 
+    st.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """,
+                unsafe_allow_html=True)
+    
 st.sidebar.subheader("✌️ Step 2")
 st.sidebar.write("")
 uploaded_file = st.sidebar.file_uploader("After downloading the dataset, drag the downloaded dataset into the white submission box below here.", type=["csv"])
