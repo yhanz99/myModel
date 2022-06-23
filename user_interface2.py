@@ -381,7 +381,7 @@ st.markdown(
 # upload file through sidebar
 st.sidebar.title('Upload your diabetes .csv data here')
 
-st.sidebar.subheader("Step 1")
+st.sidebar.subheader("☝️ Step 1")
 st.sidebar.write("You shuould begin with downloading the .csv diabetes dateset given here by clicking this download button.")
 with open("diabetes_data_upload.csv", "rb") as csv_file: CSVbyte = csv_file.read()
 st.sidebar.download_button(
@@ -390,10 +390,9 @@ st.sidebar.download_button(
     file_name="diabetes_data_upload.csv",
     mime='application/octet-stream')
 
-st.sidebar.subheader("Step 2")
-st.sidebar.write("After downloading the dataset, drag the downloaded dataset into the white submission box below here.")
-#uploaded_file = st.sidebar.file_uploader("Upload your diabetes .csv dataset here", type=["csv"])
-uploaded_file = st.sidebar.file_uploader(type=["csv"])
+st.sidebar.subheader("✌️ Step 2")
+st.sidebar.write("")
+uploaded_file = st.sidebar.file_uploader("After downloading the dataset, drag the downloaded dataset into the white submission box below here.", type=["csv"])
 if uploaded_file is not None:
     with st.spinner('The dataset is being uploaded...'):
         time.sleep(3)
