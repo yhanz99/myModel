@@ -383,7 +383,8 @@ st.sidebar.title('Upload your diabetes .csv data here')
 
 st.sidebar.subheader("☝️ Step 1")
 #st.sidebar.markdown("<p>You shuould begin with downloading the .csv diabetes dateset given here by clicking this download button.</p>", unsafe_allow_html=True)
-uploaded_fileF = st.sidebar.file_uploader("You shuould begin with downloading the .csv diabetes dateset given here by clicking this download button.", type=["csv"])
+with open("diabetes_data_upload.csv", "rb") as csv_file:
+    CSVbyte = csv_file.read()
 st.sidebar.download_button(
     label="👉Download Diabetes Dataset👈",
     data=CSVbyte,
