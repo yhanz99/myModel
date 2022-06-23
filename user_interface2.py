@@ -382,22 +382,21 @@ st.sidebar.title('Upload your diabetes CSV data here')
 with open("diabetes_data_upload.csv", "rb") as csv_file:
         CSVbyte = csv_file.read()
     st.sidebar.download_button(
-                    label="👉Download Diabetes Dataset👈",
-                    data=CSVbyte,
-                    file_name="diabetes_data_upload.csv",
-                    mime='application/octet-stream'
+        label="👉Download Diabetes Dataset👈",
+        data=CSVbyte,
+        file_name="diabetes_data_upload.csv",
+        mime='application/octet-stream'
+    )
     
 
-uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
+uploaded_file = st.sidebar.file_uploader("Upload your diabetes .csv dataset here", type=["csv"])
 if uploaded_file is not None:
-    with st.spinner('CSV file is uploading...'):
+    with st.spinner('The file is begin uploaded...'):
         time.sleep(3)
-    st.success('CSV file successfully uploaded.')
+    st.success('The file is successfully uploaded.')
 else:
-    st.error('Awaiting for CSV file to be uploaded.')
+    st.error('Awaiting for the file to be uploaded.')
 
-
-)
 # upload file through sidebar
 if uploaded_file is not None:
     DF = pd.read_csv(uploaded_file)
