@@ -380,11 +380,11 @@ st.markdown(
 st.sidebar.title('Upload your diabetes .csv data here')
 
 with open("diabetes_data_upload.csv", "rb") as csv_file: CSVbyte = csv_file.read()
-    st.sidebar.download_button(
-        label="👉Download Diabetes Dataset👈",
-        data=CSVbyte,
-        file_name="diabetes_data_upload.csv",
-        mime='application/octet-stream')
+st.sidebar.download_button(
+    label="👉Download Diabetes Dataset👈",
+    data=CSVbyte,
+    file_name="diabetes_data_upload.csv",
+    mime='application/octet-stream')
     
 uploaded_file = st.sidebar.file_uploader("Upload your diabetes .csv dataset here", type=["csv"])
 if uploaded_file is not None:
