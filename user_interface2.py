@@ -137,7 +137,7 @@ def build_model(DF):
     ##########################################################################################################
 
     # display accuracy result (Adaboost)
-    st.markdown("<h6 style='text-align:left; color:#3A4B74;'><mark style='background-color: #F8BBD0;'>Section 3 - Part 1 -> ⌨Model 1: AdaBoost with Decision Tree as Base Algorithm</mark></h6>", unsafe_allow_html= True)
+    st.markdown("<h6 style='text-align:left; color:#3A4B74;'><mark style='background-color: #F8BBD0;'>(Section 3 - Part 1) ⌨Model 1: AdaBoost with Decision Tree as Base Algorithm</mark></h6>", unsafe_allow_html= True)
     st.write(" **A. The Accuracy Result of Train Set** ", (adaboostclf_train_sc.round(4)*100),"%")
     st.write(" **B. The Accuracy Result of Test Set** ", (adaboostclf_test_sc.round(4)*100),"%")
     if adaboostclf_test_sc > SVM_test_sc and adaboostclf_test_sc > ec_test_sc:
@@ -211,7 +211,7 @@ def build_model(DF):
 
     # display accuracy (SVM)
     st.markdown(
-        "<h6 style='text-align:left; color:#3A4B74;'><mark style='background-color: #F8BBD0;'>Section 3 - Part 2 -> ⌨Model 2: Support Vector Machine (SVM)</mark></h6>",
+        "<h6 style='text-align:left; color:#3A4B74;'><mark style='background-color: #F8BBD0;'>(Section 3 - Part 2) ⌨Model 2: Support Vector Machine (SVM)</mark></h6>",
         unsafe_allow_html=True)
     st.write(" **A. The Accuracy Result of Train Set**     ", (SVM_train_sc.round(4)*100),"%")
     st.write(" **B. The Accuracy Result of Test Set**     ", (SVM_test_sc.round(4)*100),"%")
@@ -286,7 +286,7 @@ def build_model(DF):
 
     # display accuracy (EM)
     st.markdown(
-        "<h6 style='text-align:left; color:#3A4B74;'><mark style='background-color: #F8BBD0;'>Section 3 - Part 3 -> ⌨Model 3: Ensemble Method Model</mark></h6>",
+        "<h6 style='text-align:left; color:#3A4B74;'><mark style='background-color: #F8BBD0;'>(Section 3 - Part) ⌨Model 3: Ensemble Method Model</mark></h6>",
         unsafe_allow_html=True)
     st.write(" **A. The Accuracy Result of Train Set** ", (ec_train_sc * 100).round(2), "%")
     st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc * 100).round(2), "%")
