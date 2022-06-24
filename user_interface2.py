@@ -272,7 +272,7 @@ def build_model(DF):
     st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc * 100).round(2), "%")
     if ec_test_sc > adaboostclf_test_sc and ec_test_sc > SVM_test_sc:
         st.markdown(
-        "<mark style='color:yellow;'><p style='text-align:left; color:black;'><b>Conclusion: Model 3 is the <u><i>strongest</i></u> model !.</b></p></mark>",
+        "<p style='text-align:left; color:black;'><mark style='color:yellow;'><b>Conclusion: Model 3 is the <u><i>strongest</i></u> model !.</b></mark></p>",
         unsafe_allow_html=True)
         st.success("**Conclusion: Model 3 is the _strongest_ model !**")
     elif ec_test_sc < adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
@@ -334,7 +334,7 @@ def build_model(DF):
     st.header("👀 Sneak peak on findings of previous research")
     st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This project was conducted on five (5) previous research works from machine learning expertise."
              " I would like to grab this opportunity to share one (1) of the works here. You may download this research paper as your reference too. Hope you enjoy it! &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
-                " &emsp;&emsp;&emsp;&emsp;&emsp;-Yee Hang</i></p>", unsafe_allow_html= True)
+                " &emsp;&emsp;&emsp;-Yee Hang</i></p>", unsafe_allow_html= True)
     st.write("\n")
 
     st.markdown("**Details of the research paper:**")
