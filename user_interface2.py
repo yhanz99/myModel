@@ -23,6 +23,7 @@ img = Image.open('logo.png')
 st.set_page_config(
     page_title="Diabetes Prediction Test",
     layout="wide",
+    nitial_sidebar_state=‘collapse’,
     page_icon=img
 )
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -376,6 +377,9 @@ st.markdown(
 st.markdown(
         "<p style='text-align:left; color:black;'>4️⃣ You are now all set. Click the <mark>Greater than sign ( > )</mark> button on the upper left side of the screen, and you may begin the journey of prediction.</p>",
         unsafe_allow_html=True)
+if "counter" not in st.session_state:
+        st.session_state.counter = 0
+
 
 # upload file through sidebar
 st.sidebar.title('Upload your diabetes .csv data here')
