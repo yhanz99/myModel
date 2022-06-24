@@ -361,7 +361,7 @@ def build_model(DF):
     st.header("👀 Sneak peak on findings of previous research")
     st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This project was conducted on five (5) previous research works from machine learning expertise."
              " I would like to grab this opportunity to share one (1) of the works here. You may download this research paper as your reference too. Hope you enjoy it!"
-                "     -Yee Hang</i></p>", unsafe_allow_html= True)
+                "&emsp;&emsp;-Yee Hang</i></p>", unsafe_allow_html= True)
     st.write("\n")
 
     st.markdown("**Details of the research paper:**")
