@@ -372,7 +372,7 @@ def build_model(DF):
 
     st.markdown("**Findings on this paper:**")
     image = Image.open('paper_result.png')
-    st.image(image, caption='The results of accuracy on each model tested in this paper.')
+    st.image(image, caption='Table 1: The results of accuracy on each model tested in this paper.')
     
     #embed pdf file
     with open("Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm.pdf", "rb") as pdf_file:
