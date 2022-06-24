@@ -286,7 +286,7 @@ def build_model(DF):
 
     # display accuracy (EM)
     st.markdown(
-        "<h6 style='text-align:left; color:#3A4B74;'><mark style='background-color: #F8BBD0;'>⌨Model 3: Ensemble Method</mark></h6>",
+        "<h6 style='text-align:left; color:#3A4B74;'><mark style='background-color: #F8BBD0;'>⌨Model 3: Ensemble Method Model</mark></h6>",
         unsafe_allow_html=True)
     st.write(" **A. The Accuracy Result of Train Set** ", (ec_train_sc * 100).round(2), "%")
     st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc * 100).round(2), "%")
