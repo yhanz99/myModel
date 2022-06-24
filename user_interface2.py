@@ -54,7 +54,7 @@ def build_model(DF):
     featureScores = pd.concat([dfcolumns, dfscores], axis=1)
     featureScores.columns = ['Features', 'Score']  # naming the dataframe columns
     st.subheader("**Section 2: Features Selection**")
-    st.markdown("**Top 5 features. The score indicates the importance level of each feature to the dataset.**")
+    st.markdown("**TOP 5 features. The score indicates the importance level of each feature to the dataset.**")
     st.write(featureScores.nlargest(5, 'Score'))  # print 5 best features
     st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
@@ -271,7 +271,7 @@ def build_model(DF):
     st.write(" **A. The Accuracy Result of Train Set** ", (ec_train_sc * 100).round(2), "%")
     st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc * 100).round(2), "%")
     if ec_test_sc > adaboostclf_test_sc and ec_test_sc > SVM_test_sc:
-        st.success("**Conclusion: Model 3 is the _**strongest**_ model !**")
+        st.success("**Conclusion: Model 3 is the ~_strongest_~ model !**")
     elif ec_test_sc < adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
         st.error("**Conclusion: Model 3 is the _weakest_ model !**")
     elif ec_test_sc > adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
@@ -347,7 +347,7 @@ def build_model(DF):
     #embed pdf file
     with open("Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
-    st.download_button(label="👉Download Research Paper👈",
+    st.download_button(label="👉Click Me: Download Research Paper👈",
                        data=PDFbyte,
                        file_name="Research Paper.pdf",
                        mime='application/octet-stream')
@@ -390,7 +390,7 @@ st.sidebar.markdown("<p>You should begin with downloading the .csv diabetes date
 with open("diabetes_data_upload.csv", "rb") as csv_file:
     CSVbyte = csv_file.read()
 st.sidebar.download_button(
-    label="👉Download Diabetes Dataset👈",
+    label="👉Click Me: Download Diabetes Dataset👈",
     data=CSVbyte,
     file_name="diabetes_data_upload.csv",
     mime='application/octet-stream')
@@ -413,7 +413,7 @@ if uploaded_file is not None:
     st.subheader('Section 1: Dataset')
     st.markdown('**Glimpse of dataset.** This dataset contains 520 of samples and seventeen (17) attributes including one (1) target varaible.')
     st.write(DF)
-    if st.button("Generate Diabetes Prediction Results"):
+    if st.button("👉Click Me: Generate Diabetes Prediction Results👈"):
         st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                     unsafe_allow_html=True)
         build_model(DF)
