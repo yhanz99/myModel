@@ -272,7 +272,7 @@ def build_model(DF):
     st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc * 100).round(2), "%")
     if ec_test_sc > adaboostclf_test_sc and ec_test_sc > SVM_test_sc:
         st.markdown(
-        "<p style='text-align:left; color:black;'><mark style='background-color:green;'><b>Conclusion: Model 3 is the <u><i>strongest</i></u> model !.</b></mark></p>",
+        "<p style='text-align:left; color:black;'><mark style='background-color:#DCE775;'><b>Conclusion: Model 3 is the <u><i>strongest</i></u> Model !</b></mark></p>",
         unsafe_allow_html=True)
         st.success("**Conclusion: Model 3 is the _strongest_ model !**")
     elif ec_test_sc < adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
