@@ -141,15 +141,25 @@ def build_model(DF):
     st.write(" **A. The Accuracy Result of Train Set** ", (adaboostclf_train_sc.round(4)*100),"%")
     st.write(" **B. The Accuracy Result of Test Set** ", (adaboostclf_test_sc.round(4)*100),"%")
     if adaboostclf_test_sc > SVM_test_sc and adaboostclf_test_sc > ec_test_sc:
-        st.success("**Conclusion: Model 1 is the ~_strongest_~ model !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#DCE775;'><b>Conclusion: Model 1 is the <u><i>strongest</i></u> model !</b></mark></p>",
+        unsafe_allow_html=True)
     elif adaboostclf_test_sc < SVM_test_sc and adaboostclf_test_sc < ec_test_sc:
-        st.error("**Conclusion: Model 1 is the _weakest_ model !**")
+         st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FF3D00;'><b>Conclusion: Model 1 is the <u><i>weakest</i></u> model !</b></mark></p>",
+        unsafe_allow_html=True)
     elif adaboostclf_test_sc > SVM_test_sc and adaboostclf_test_sc < ec_test_sc:
-        st.warning("**Conclusion: Model 1 is _stronger_ than Model 2, but _weaker_ than Model 3 !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FFE57F;'><b>Conclusion: Model 1 is <u><i>stronger</i></u> than Model 2, but <u><i>weaker</u></i> than Model 3 !</b></mark></p>",
+        unsafe_allow_html=True)
     elif adaboostclf_test_sc < SVM_test_sc and adaboostclf_test_sc > ec_test_sc:
-        st.warning("**Conclusion: Model 1 is _**stronger**_ than Model 3, but _**weaker**_ than Model 2!** ")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FFE57F;'><b>Conclusion: Model 1 is <u><i>stronger</i></u> than Model 3, but <u><i>weaker</u></i> than Model 2 !</b></mark></p>",
+        unsafe_allow_html=True)
     else:
-        st.error("**Conclusion :Model 1 is the _weakest_ model !**")
+         st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FF3D00;'><b>Conclusion: Model 1 is the <u><i>weakest</i></u> model !</b></mark></p>",
+        unsafe_allow_html=True)
     expand_Ada1 = st.expander(label='Model Evaluation: Confusion Matrix')
     with expand_Ada1:
         model1Report1_col1, model1Report1_col2 = st.columns(2)
@@ -206,15 +216,25 @@ def build_model(DF):
     st.write(" **A. The Accuracy Result of Train Set**     ", (SVM_train_sc.round(4)*100),"%")
     st.write(" **B. The Accuracy Result of Test Set**     ", (SVM_test_sc.round(4)*100),"%")
     if SVM_test_sc > adaboostclf_test_sc and SVM_test_sc > ec_test_sc:
-        st.success("**Conclusion: Model 2 is the _strongest_ model !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#DCE775;'><b>Conclusion: Model 2 is the <u><i>strongest</i></u> model !</b></mark></p>",
+        unsafe_allow_html=True)
     elif SVM_test_sc < adaboostclf_test_sc and SVM_test_sc < ec_test_sc:
-        st.error("**Conclusion: Model 2 is the _weakest_ model !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FF3D00;'><b>Conclusion: Model 2 is the <u><i>weakest</i></u> model !</b></mark></p>",
+        unsafe_allow_html=True)
     elif SVM_test_sc > adaboostclf_test_sc and SVM_test_sc < ec_test_sc:
-        st.warning("**Conclusion: Model 2 is _stronger_ than Model 1, but _weaker_ than Model 3 !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FFE57F;'><b>Conclusion: Model 2 is <u><i>stronger</i></u> than Model 1, but <u><i>weaker</u></i> than Model 3 !</b></mark></p>",
+        unsafe_allow_html=True)
     elif SVM_test_sc < adaboostclf_test_sc and SVM_test_sc > ec_test_sc:
-        st.warning("**Conclusion: Model 2 is _stronger_ than Model 3, but _weaker_ than Model 1 !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FFE57F;'><b>Conclusion: Model 2 is <u><i>stronger</i></u> than Model 3, but <u><i>weaker</u></i> than Model 1 !</b></mark></p>",
+        unsafe_allow_html=True)
     else:
-        st.error("**Conclusion: Model 2 is the _weakest_ model !**")
+         st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FF3D00;'><b>Conclusion: Model 2 is the <u><i>weakest</i></u> model !</b></mark></p>",
+        unsafe_allow_html=True)
     expand_SVM1 = st.expander(label='Model Evaluation: Confusion Matrix')
     with expand_SVM1:
         model2Report1_col1, model2Report1_col2 = st.columns(2)
@@ -272,17 +292,24 @@ def build_model(DF):
     st.write(" **B. The Accuracy Result of Test Set** ", (ec_test_sc * 100).round(2), "%")
     if ec_test_sc > adaboostclf_test_sc and ec_test_sc > SVM_test_sc:
         st.markdown(
-        "<p style='text-align:left; color:black;'><mark style='background-color:#DCE775;'><b>Conclusion: Model 3 is the <u><i>strongest</i></u> Model !</b></mark></p>",
+        "<p style='text-align:left; color:black;'><mark style='background-color:#DCE775;'><b>Conclusion: Model 3 is the <u><i>strongest</i></u> model !</b></mark></p>",
         unsafe_allow_html=True)
-        st.success("**Conclusion: Model 3 is the _strongest_ model !**")
     elif ec_test_sc < adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
-        st.error("**Conclusion: Model 3 is the _weakest_ model !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FF3D00;'><b>Conclusion: Model 3 is the <u><i>weakest</i></u> model !</b></mark></p>",
+        unsafe_allow_html=True)
     elif ec_test_sc > adaboostclf_test_sc and ec_test_sc < SVM_test_sc:
-        st.warning("**Conclusion: Model 3 is _stronger_ than Model 1, but weaker than Model 2 !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FFE57F;'><b>Conclusion: Model 3 is <u><i>stronger</i></u> than Model 1, but <u><i>weaker</u></i> than Model 2 !</b></mark></p>",
+        unsafe_allow_html=True)
     elif ec_test_sc < adaboostclf_test_sc and ec_test_sc > SVM_test_sc:
-        st.warning("**Conclusion: Model 3 is _stronger_ than Model 2, but weaker than Model 1 !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FFE57F;'><b>Conclusion: Model 3 is <u><i>stronger</i></u> than Model 2, but <u><i>weaker</u></i> than Model 1 !</b></mark></p>",
+        unsafe_allow_html=True)
     else:
-        st.error("**Conclusion: Model 3 is the _weakest_ model !**")
+        st.markdown(
+        "<p style='text-align:left; color:black;'><mark style='background-color:#FF3D00;'><b>Conclusion: Model 3 is the <u><i>weakest</i></u> model !</b></mark></p>",
+        unsafe_allow_html=True)
     expand_EM1 = st.expander(label='Model Evaluation: Confusion Matrix')
     with expand_EM1:
         model3Report1_col1, model3Report1_col2 = st.columns(2)
