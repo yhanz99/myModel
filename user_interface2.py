@@ -435,6 +435,11 @@ if uploaded_file is not None:
 else:
     st.error('Awaiting for the dataset to be uploaded.')
 
+st.sidebar.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """, unsafe_allow_html=True)
+    
+st.sidebar.subheader("👌 Step 3")
+st.sidebar.markdown("<p>Yeay, the .csv dataset uploaded successfully! You may now close the side bar to view the main site.</p>", unsafe_allow_html=True)
+
 # upload file through sidebar
 if uploaded_file is not None:
     DF = pd.read_csv(uploaded_file)
