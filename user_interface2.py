@@ -23,7 +23,7 @@ img = Image.open('logo.png')
 st.set_page_config(
     page_title="Diabetes Prediction Test",
     layout="wide",
-    initial_sidebar_state=‘collapsed’,
+    initial_sidebar_state="collapsed",
     page_icon=img
 )
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -398,7 +398,8 @@ st.sidebar.download_button(
 st.sidebar.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
 st.sidebar.subheader("✌️ Step 2")
-uploaded_file = st.sidebar.file_uploader("After downloading the dataset, drag the downloaded dataset into the white submission box below here.", type=["csv"])
+st.markdown("<p>After downloading the dataset, drag the downloaded dataset into the white submission box below here.</p>", unsafe_allow_html=True)
+uploaded_file = st.sidebar.file_uploader("", type=["csv"])
 if uploaded_file is not None:
     with st.spinner('The dataset is being uploaded...'):
         time.sleep(3)
