@@ -326,7 +326,6 @@ def build_model(DF):
 
     st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
-
     ###########################################previous findings########################################################
     st.header("👀 Sneak peak on findings of previous research")
     st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This project was conducted on five (5) previous research works from machine learning expertise."
@@ -338,12 +337,13 @@ def build_model(DF):
     st.markdown("📝 Research Title: Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm")
     st.markdown("📝 Published Year: 2018")
     st.markdown("📝 Authors: Minyechil Alehegn, Rahul Joshi, and Dr. Preeti Mulay")
-    st.markdown("📝 Citation: Alehegn, M., Joshi, R. & Mulay, P. 2018. Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm. International Journal of Pure and Applied Mathematics, 118(9), 871-878.[link](https://www.researchgate.net/publication/323278139_Analysis_and_prediction_of_diabetes_mellitus_using_machine_learning_algorithm)")
+    st.markdown("📝 Citation: Alehegn, M., Joshi, R. & Mulay, P. 2018. Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm. International Journal of Pure and Applied Mathematics, 118(9), 871-878. [link](https://www.researchgate.net/publication/323278139_Analysis_and_prediction_of_diabetes_mellitus_using_machine_learning_algorithm)")
 
     st.markdown("**Findings on this paper:**")
     image = Image.open('paper_result.png')
     st.image(image, caption='The results of accuracy on each model tested in this paper.')
-
+    
+    #embed pdf file
     with open("Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm.pdf", "rb") as pdf_file:
         PDFbyte = pdf_file.read()
     st.download_button(label="👉Download Research Paper👈",
@@ -374,7 +374,7 @@ st.markdown(
         "<p style='text-align:left; color:black;'>&emsp;📎Model 3: Ensemble Method Model.</p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>4️⃣ You are now all set. Click the <h6>Greater than sign</h6> on the upper left side of the screen, and you may begin the prediction journey.</p>",
+        "<p style='text-align:left; color:black;'>4️⃣ You are now all set. Click the <mark>Greater than sign ( > )</mark> button on the upper left side of the screen, and you may begin the journey of prediction.</p>",
         unsafe_allow_html=True)
 
 # upload file through sidebar
@@ -382,6 +382,7 @@ st.sidebar.title('Upload your diabetes .csv data here')
 
 st.sidebar.subheader("☝️ Step 1")
 st.sidebar.markdown("<p>You should begin with downloading the .csv diabetes dateset given here by clicking this download button.</p>", unsafe_allow_html=True)
+#embed dataset .csv
 with open("diabetes_data_upload.csv", "rb") as csv_file:
     CSVbyte = csv_file.read()
 st.sidebar.download_button(
@@ -411,4 +412,4 @@ if uploaded_file is not None:
         st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                     unsafe_allow_html=True)
         build_model(DF)
-########################################################################################################################
+####################################################################################################################################################################
