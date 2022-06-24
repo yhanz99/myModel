@@ -23,7 +23,7 @@ img = Image.open('logo.png')
 st.set_page_config(
     page_title="Diabetes Prediction Test",
     layout="wide",
-    nitial_sidebar_state=‘collapse’,
+    initial_sidebar_state=‘collapsed’,
     page_icon=img
 )
 st.set_option('deprecation.showPyplotGlobalUse', False)
