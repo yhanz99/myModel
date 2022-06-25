@@ -391,10 +391,10 @@ st.write("")
 st.markdown("This tool enables users to compare the accuracy of Diabetes Prediction Results generated using three (3) Machine Learning models.")
 st.markdown(" **👩‍💻Instructions:** ")
 st.markdown(
-        "<p style='text-align:left; color:black;'>1️⃣ Click the <mark>'Greater than' sign ( > )</mark> button on the upper left side of the screen to open the side bar, and you may begin the journey. </p>",
+        "<p style='text-align:left; color:black;'>1️⃣ Click the <mark>'Greater than' sign ( > )</mark> button on the upper left side of the screen to open the sidebar, and you may begin the journey. </p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>2️⃣ You are now all set. Download the .csv Diabetes dataset and insert it into this tool through the white submission box displayed on the side bar.</p>",
+        "<p style='text-align:left; color:black;'>2️⃣ You are now all set. Download the .csv Diabetes dataset and insert it into this tool through the white submission box displayed on the sidebar.</p>",
         unsafe_allow_html=True)
 st.markdown(
         "<p style='text-align:left; color:black;'>3️⃣ Click the <mark>Generate Diabetes Prediction Results</mark> button and you are now able to view the Diabetes prediction accuracy results of the models below:</p>",
@@ -411,7 +411,7 @@ st.markdown(
 
 
 # upload file through sidebar
-st.sidebar.title("Side Bar")
+st.sidebar.title("Sidebar")
 st.sidebar.write('Download and upload your Diabetes .csv dataset here.')
 st.sidebar.markdown("""<hr style="height:5px; border:none; color:#8CB1F5; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
@@ -441,7 +441,7 @@ else:
 st.sidebar.markdown("""<hr style="height:1px; border:none; color:black; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
 st.sidebar.subheader("👌 Step 3")
-st.sidebar.markdown("<p>Yeay, the .csv dataset uploaded successfully! You may now close the side bar to view the main site.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p>Congratulations! The .csv dataset has been uploaded successfully! You may close the sidebar to view the results.</p>", unsafe_allow_html=True)
 
 # upload file through sidebar
 if uploaded_file is not None:
