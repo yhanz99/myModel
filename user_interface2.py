@@ -436,7 +436,7 @@ if uploaded_file is not None:
         time.sleep(3)
     st.success('The dataset is successfully uploaded.')
 else:
-    st.error('Awaiting for the .csv dataset to be uploaded.')
+    st.error('Awaiting for the .csv dataset to be uploaded......')
 
 st.sidebar.markdown("""<hr style="height:1px; border:none; color:black; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
