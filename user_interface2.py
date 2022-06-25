@@ -386,7 +386,7 @@ def build_model(DF):
                        mime='application/octet-stream')
 ########################################################################################################################
 # starting interface on title page
-st.title("""Diabetes Prediction Tool using Machine Learning Method""")
+st.title("""Diabetes Prediction Tool using Machine Learning Methods""")
 st.write("")
 st.markdown("This tool enables users to compare the accuracy of Diabetes Prediction Results generated using three (3) Machine Learning models.")
 st.markdown(" **👩‍💻Instructions to use this tool:** ")
