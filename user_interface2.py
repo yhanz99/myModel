@@ -413,7 +413,7 @@ st.markdown(
 # upload file through sidebar
 st.sidebar.title("Side Bar")
 st.sidebar.write('Download and upload your Diabetes .csv dataset here.')
-st.sidebar.markdown("""<hr style="height:5px; border:none; color:#8CB1F5; background-color:#8CB1F5;" /> """,
+st.sidebar.markdown("""<hr style="height:5px; border:none; color:#8CB1F5; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
 st.sidebar.subheader("☝️ Step 1")
 st.sidebar.markdown("<p> Download the .csv Diabetes dataset by clicking the button below.</p>", unsafe_allow_html=True)
