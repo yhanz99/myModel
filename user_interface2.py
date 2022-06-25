@@ -391,13 +391,13 @@ st.write("")
 st.markdown("This tool enables users to compare the accuracy of Diabetes Prediction Results generated using three (3) Machine Learning models.")
 st.markdown(" **👩‍💻Instructions to use this tool:** ")
 st.markdown(
-        "<p style='text-align:left; color:black;'>1️⃣ Download the .csv Diabetes dataset provided in the side bar and insert it into this tool through the white submission box displayed in the side bar.</p>",
+        "<p style='text-align:left; color:black;'>1️⃣ Click the <mark>'Greater than' sign ( > )</mark> button on the upper left side of the screen to open the side bar, and you may begin the journey. </p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>2️⃣ You are now all set. Click the <mark>Greater than sign ( > )</mark> button on the upper left side of the screen to open the side bar, and you may begin the journey of prediction.</p>",
+        "<p style='text-align:left; color:black;'>2️⃣ You are now all set. Download the .csv Diabetes dataset and insert it into this tool through the white submission box displayed on the side bar.</p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>3️⃣ Click the <mark>Generate Diabetes Prediction Results</mark> button to begin, and you are now able to view the accuracy results of the models below:</p>",
+        "<p style='text-align:left; color:black;'>3️⃣ Click the <mark>Generate Diabetes Prediction Results</mark> button and you are now able to view the Diabetes prediction accuracy results of the models below:</p>",
         unsafe_allow_html=True)
 st.markdown(
         "<p style='text-align:left; color:black;'>&emsp;📎Model 1: AdaBoost with Decision Tree as Base Algorithm.</p>",
@@ -408,6 +408,7 @@ st.markdown(
 st.markdown(
         "<p style='text-align:left; color:black;'>&emsp;📎Model 3: Ensemble Method Model.</p>",
         unsafe_allow_html=True)
+
 
 # upload file through sidebar
 st.sidebar.title("Side Bar")
