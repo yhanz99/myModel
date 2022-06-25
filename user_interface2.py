@@ -386,9 +386,9 @@ def build_model(DF):
                        mime='application/octet-stream')
 ########################################################################################################################
 # starting interface on title page
-st.write("""# Diabetes Prediction Test""")
+st.title("""Diabetes Prediction Tool using Machine Learning Method""")
 st.write("")
-st.markdown("This tool enables users to compare the accuracy of Diabetes Prediction Results generated using three (3) Machine Learning models;")
+st.markdown("This tool enables users to compare the accuracy of Diabetes Prediction Results generated using three (3) Machine Learning models.")
 st.markdown(" **👩‍💻Instructions to use this tool:** ")
 st.markdown(
         "<p style='text-align:left; color:black;'>1️⃣ Download the .csv Diabetes dataset provided in the side bar and insert it into this tool through the white submission box displayed in the side bar.</p>",
