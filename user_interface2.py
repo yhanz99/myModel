@@ -54,7 +54,7 @@ def build_model(DF):
     featureScores = pd.concat([dfcolumns, dfscores], axis=1)
     featureScores.columns = ['Features', 'Score']  # naming the dataframe columns
     st.subheader("**Section 2: Features Selection**")
-    st.markdown("**_TOP FIVE (5) features_. The score indicates the importance level of each feature to the dataset.**")
+    st.markdown("**_TOP FIVE (5) features_**. The score indicates the importance level of each feature to the dataset.")
     st.write(featureScores.nlargest(5, 'Score'))  # print 5 best features
     st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
@@ -257,7 +257,7 @@ def build_model(DF):
             #st.info(model2_cfMatrix)
             with model2Report1_col2:
                 st.write(
-                    'Confusion Matrix to show the prediction of results in four (4) categories.\n'
+                    'Confusion Matrix to show the prediction of results in the form of four (4) categories.\n'
                     '1. True Positive (TP): Correctly predicted.\n'
                     '2. False Positive (FP): Incorrectly identified (Type I error).\n'
                     '3. False Negative (FN): Incorrectly rejected (Type II error).\n'
