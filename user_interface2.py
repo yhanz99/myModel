@@ -389,7 +389,7 @@ def build_model(DF):
 st.title("""Diabetes Prediction Tool using Machine Learning Methods""")
 st.write("")
 st.markdown("This tool enables users to compare the accuracy of Diabetes Prediction Results generated using three (3) Machine Learning models.")
-st.markdown(" **👩‍💻Instructions to use this tool:** ")
+st.markdown(" **👩‍💻Instructions:** ")
 st.markdown(
         "<p style='text-align:left; color:black;'>1️⃣ Click the <mark>'Greater than' sign ( > )</mark> button on the upper left side of the screen to open the side bar, and you may begin the journey. </p>",
         unsafe_allow_html=True)
