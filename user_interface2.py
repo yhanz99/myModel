@@ -54,7 +54,7 @@ def build_model(DF):
     featureScores = pd.concat([dfcolumns, dfscores], axis=1)
     featureScores.columns = ['Features', 'Score']  # naming the dataframe columns
     st.subheader("**Section 2: Features Selection**")
-    st.markdown("**TOP 5 features. The score indicates the importance level of each feature to the dataset.**")
+    st.markdown("**_TOP FIVE (5) features_. The score indicates the importance level of each feature to the dataset.**")
     st.write(featureScores.nlargest(5, 'Score'))  # print 5 best features
     st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
                 unsafe_allow_html=True)
@@ -78,7 +78,7 @@ def build_model(DF):
     ####################################################################################################################
     # model performance
     st.subheader('Section 3: Model Performance')
-    st.markdown("In this section, the dataset with **TOP 5** features selected will be inserted into 3 models below.")
+    st.markdown("In this section, the dataset with **TOP FIVE (5)** features selected will be inserted into three (3) models below.")
     st.write("\n")
     # #Adaboost
     # setting decision tree as decision stump
@@ -182,15 +182,16 @@ def build_model(DF):
             # explain confusion matrix
             with model1Report1_col2:
                 st.write(
-                'Confusion Matrix to show the prediction of results in the form of matrix.\n'
+                'Confusion Matrix to show the prediction of results in the form of four (4) categories.\n'
                 '1. True Positive (TP): Correctly predicted.\n'
                 '2. False Positive (FP): Incorrectly identified (Type I error).\n'
                 '3. False Negative (FN): Incorrectly rejected (Type II error).\n'
                 '4. True Negative (TN): Correctly rejected.\n'
                 'In Model 1:  TP -> 42, FP -> 98, FN -> 6, TN -> 10. ')
-                st.write("**Accuracy:**", (accuracy_score(y_test1, target_pred1).round(4)*100), "%")
-                st.write("**Precision:**", (0.8750 * 100), "%")
-                st.write("**Recall:**", (0.8077 * 100), "%")
+                st.write("**Measurement Based on Confusion Matrix:**")
+                st.write("**A. Accuracy:**", (accuracy_score(y_test1, target_pred1).round(4)*100), "%")
+                st.write("**B. Precision:**", (0.8750 * 100), "%")
+                st.write("**C. Recall:**", (0.8077 * 100), "%")
     expand_Ada2 = st.expander(label='Model Evaluation: ROC Curve')
     with expand_Ada2:
         model1Report2_col1, model1Report2_col2 = st.columns(2)
@@ -256,16 +257,17 @@ def build_model(DF):
             #st.info(model2_cfMatrix)
             with model2Report1_col2:
                 st.write(
-                    'Confusion Matrix to show the prediction of results in the form of matrix.\n'
+                    'Confusion Matrix to show the prediction of results in four (4) categories.\n'
                     '1. True Positive (TP): Correctly predicted.\n'
                     '2. False Positive (FP): Incorrectly identified (Type I error).\n'
                     '3. False Negative (FN): Incorrectly rejected (Type II error).\n'
                     '4. True Negative (TN): Correctly rejected. \n'
                     'In Model 2:  TP -> 45, FP -> 6, FN -> 6, TN -> 73. '
                 )
-                st.write("**Accuracy:**", (accuracy_score(y_test3, target_pred2).round(4)*100), "%")
-                st.write("**Precision:**", (0.8824 * 100), "%")
-                st.write("**Recall:**", (0.8824 * 100), "%")
+                st.write("**Measurement Based on Confusion Matrix:**")
+                st.write("**A. Accuracy:**", (accuracy_score(y_test3, target_pred2).round(4)*100), "%")
+                st.write("**B. Precision:**", (0.8824 * 100), "%")
+                st.write("**C. Recall:**", (0.8824 * 100), "%")
     expand_SVM2 = st.expander(label='Model Evaluation: ROC Curve')
     with expand_SVM2:
         model2Report2_col1, model2Report2_col2 = st.columns(2)
@@ -330,16 +332,17 @@ def build_model(DF):
             #st.info(model3_cfMatrix)
             with model3Report1_col2:
                 st.write(
-                    'Confusion Matrix to show the prediction of results in the form of matrix.\n'
+                    'Confusion Matrix to show the prediction of results in the form of four (4) categories.\n'
                     '1. True Positive (TP): Correctly predicted.\n'
                     '2. False Positive (FP): Incorrectly identified (Type I error).\n'
                     '3. False Negative (FN): Incorrectly rejected (Type II error).\n'
                     '4. True Negative (TN): Correctly rejected.\n '
                     'In Model 3:  TP -> 74, FP -> 10, FN -> 9, TN -> 120. '
                 )
-                st.write("**Accuracy:**", (accuracy_score(y_test2, target_pred3).round(2) * 100), "%")
-                st.write("**Precision:**", (0.8916 * 100), "%")
-                st.write("**Recall:**", (0.8810 * 100), "%")
+                st.write("**Measurement Based on Confusion Matrix:**")
+                st.write("**A. Accuracy:**", (accuracy_score(y_test2, target_pred3).round(2) * 100), "%")
+                st.write("**B. Precision:**", (0.8916 * 100), "%")
+                st.write("**C. Recall:**", (0.8810 * 100), "%")
     expand_EM2 = st.expander(label='Model Evaluation: ROC Curve')
     with expand_EM2:
         model3Report2_col1, model3Report2_col2 = st.columns(2)
@@ -359,7 +362,7 @@ def build_model(DF):
                 unsafe_allow_html=True)
     ###########################################previous findings########################################################
     st.header("👀 Sneak peak on findings of previous research")
-    st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This project was conducted on five (5) previous research works from machine learning expertise."
+    st.markdown("<p style='text-align:;left; color:#054B4A;'><i>This project was conducted on five (5) previous research works from machine learning expertises."
              " I would like to grab this opportunity to share one (1) of the works here. You may download this research paper as your reference too. Hope you enjoy it!"
                 "&emsp;&emsp;-Yee Hang</i></p>", unsafe_allow_html= True)
     st.write("\n")
@@ -368,7 +371,7 @@ def build_model(DF):
     st.markdown("📝 Research Title: Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm")
     st.markdown("📝 Published Year: 2018")
     st.markdown("📝 Authors: Minyechil Alehegn, Rahul Joshi, and Dr. Preeti Mulay")
-    st.markdown("📝 Citation: Alehegn, M., Joshi, R. & Mulay, P. 2018. Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm. International Journal of Pure and Applied Mathematics, 118(9), 871-878. [link](https://www.researchgate.net/publication/323278139_Analysis_and_prediction_of_diabetes_mellitus_using_machine_learning_algorithm)")
+    st.markdown("📝 Citation: Alehegn, M., Joshi, R. & Mulay, P. 2018. Analysis and Prediction of Diabetes Mellitus using Machine Learning Algorithm. International Journal of Pure and Applied Mathematics, 118(9), 871-878. [Link](https://www.researchgate.net/publication/323278139_Analysis_and_prediction_of_diabetes_mellitus_using_machine_learning_algorithm)")
 
     st.markdown("**Findings on this paper:**")
     image = Image.open('paper_result.png')
@@ -388,10 +391,10 @@ st.write("")
 st.markdown("In this tool, you could compare the accuracy of resutls on diabetes prediction which generated by three (3) models.")
 st.markdown(" **👩‍💻Instructions to use this tool:** ")
 st.markdown(
-        "<p style='text-align:left; color:black;'>1️⃣ Download the .csv diabetes dataset provided in the side bar and insert the downloaded dataset into the box in side bar.</p>",
+        "<p style='text-align:left; color:black;'>1️⃣ Download the .csv Diabetes dataset provided in the side bar and insert it into this tool through the white submission box displayed in the side bar.</p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>2️⃣ Click <mark>Generate Diabetes Prediction Result</mark> button to begin.</p>",
+        "<p style='text-align:left; color:black;'>2️⃣ Click <mark>Generate Diabetes Prediction Results</mark> button to begin.</p>",
         unsafe_allow_html=True)
 st.markdown(
         "<p style='text-align:left; color:black;'>3️⃣ You are now able to view the accuracy results of the models below:</p>",
@@ -406,14 +409,15 @@ st.markdown(
         "<p style='text-align:left; color:black;'>&emsp;📎Model 3: Ensemble Method Model.</p>",
         unsafe_allow_html=True)
 st.markdown(
-        "<p style='text-align:left; color:black;'>4️⃣ You are now all set. Click the <mark>Greater than sign ( > )</mark> button on the upper left side of the screen, and you may begin the journey of prediction.</p>",
+        "<p style='text-align:left; color:black;'>4️⃣ You are now all set. Click the <mark>Greater than sign ( > )</mark> button on the upper left side of the screen to open the side bar, and you may begin the journey of prediction.</p>",
         unsafe_allow_html=True)
 
 # upload file through sidebar
-st.sidebar.title('Upload your diabetes .csv data here')
+st.sidebar.title("Side Bar")
+st.sidebar.write('Download and upload your Diabetes .csv dataset here.')
 
 st.sidebar.subheader("☝️ Step 1")
-st.sidebar.markdown("<p>You should begin with downloading the .csv diabetes dateset given here by clicking this download button.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p>You should begin with downloading the .csv Diabetes dataset given here by clicking the download button below.</p>", unsafe_allow_html=True)
 #embed dataset .csv
 with open("diabetes_data_upload.csv", "rb") as csv_file:
     CSVbyte = csv_file.read()
@@ -426,14 +430,14 @@ st.sidebar.download_button(
 st.sidebar.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
 st.sidebar.subheader("✌️ Step 2")
-st.sidebar.markdown("<p>After downloading the dataset, drag the downloaded dataset into the white submission box below here.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p>After downloading the dataset, drag it into the white submission box below here.</p>", unsafe_allow_html=True)
 uploaded_file = st.sidebar.file_uploader("", type=["csv"])
 if uploaded_file is not None:
-    with st.spinner('The dataset is being uploaded...'):
+    with st.spinner('The dataset is being upload...'):
         time.sleep(3)
     st.success('The dataset is successfully uploaded.')
 else:
-    st.error('Awaiting for the dataset to be uploaded.')
+    st.error('Awaiting for the .csv dataset to be uploaded.')
 
 st.sidebar.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
@@ -444,7 +448,7 @@ st.sidebar.markdown("<p>Yeay, the .csv dataset uploaded successfully! You may no
 if uploaded_file is not None:
     DF = pd.read_csv(uploaded_file)
     st.subheader('Section 1: Dataset')
-    st.markdown('**Glimpse of dataset.** This dataset contains five hundred and twenty (520) of samples and seventeen (17) attributes including one (1) target varaible.')
+    st.markdown('**Glimpse of dataset.** This dataset contains five hundred and nineteen (519) of samples and seventeen (17) attributes including one (1) target variable.')
     st.write(DF)
     if st.button("➡️Click: Generate Diabetes Prediction Results"):
         st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
