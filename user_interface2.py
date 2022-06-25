@@ -413,9 +413,10 @@ st.markdown(
 # upload file through sidebar
 st.sidebar.title("Side Bar")
 st.sidebar.write('Download and upload your Diabetes .csv dataset here.')
-
+st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
+                unsafe_allow_html=True)
 st.sidebar.subheader("☝️ Step 1")
-st.sidebar.markdown("<p>You should begin with downloading the .csv Diabetes dataset given here by clicking the download button below.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p> Download the .csv Diabetes dataset by clicking the button below.</p>", unsafe_allow_html=True)
 #embed dataset .csv
 with open("diabetes_data_upload.csv", "rb") as csv_file:
     CSVbyte = csv_file.read()
@@ -428,7 +429,7 @@ st.sidebar.download_button(
 st.sidebar.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
 st.sidebar.subheader("✌️ Step 2")
-st.sidebar.markdown("<p>After downloading the dataset, drag it into the white submission box below here.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p>After the dataset file is downloaded, drag it into the white submission box below.</p>", unsafe_allow_html=True)
 uploaded_file = st.sidebar.file_uploader("", type=["csv"])
 if uploaded_file is not None:
     with st.spinner('The dataset is being upload...'):
