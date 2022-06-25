@@ -438,7 +438,7 @@ if uploaded_file is not None:
 else:
     st.error('Awaiting for the .csv dataset to be uploaded.')
 
-st.sidebar.markdown("""<hr style="height:1px; border:none; color:#594B44; background-color:#594B44;" /> """, unsafe_allow_html=True)
+st.sidebar.markdown("""<hr style="height:1px; border:none; color:black; background-color:#594B44;" /> """, unsafe_allow_html=True)
     
 st.sidebar.subheader("👌 Step 3")
 st.sidebar.markdown("<p>Yeay, the .csv dataset uploaded successfully! You may now close the side bar to view the main site.</p>", unsafe_allow_html=True)
