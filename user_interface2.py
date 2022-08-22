@@ -447,7 +447,7 @@ st.sidebar.markdown("<p>Congratulations! The .csv dataset has been uploaded succ
 if uploaded_file is not None:
     DF = pd.read_csv(uploaded_file)
     st.subheader('Section 1: Dataset')
-    st.markdown('**Glimpse of dataset.** This dataset contains five hundred and nineteen (519) of samples and seventeen (17) attributes including one (1) target variable.')
+    st.markdown('**Glimpse of dataset.** This dataset contains five hundred and twenty (520) of samples and seventeen (17) attributes including one (1) target variable.')
     st.write(DF)
     if st.button("➡️Click: Generate Diabetes Prediction Results"):
         st.markdown("""<hr style="height:5px; border:none; color:#594B44; background-color:#594B44;" /> """,
